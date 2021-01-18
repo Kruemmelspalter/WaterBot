@@ -4,6 +4,7 @@ const client = new discord.Client()
 
 const CHANNEL = process.env.CHANNEL
 const MESSAGE = process.env.MESSAGE
+const INTERVAL = process.env.INTERVAL
 
 client.once('ready', () => {
     console.log("ready")
@@ -12,6 +13,6 @@ client.once('ready', () => {
 var interval = setInterval(()=>{
     console.log("reminder")
     client.channels.cache.get(CHANNEL).send(MESSAGE)
-}, 60*1000)
+}, INTERVAL)
 
 client.login(process.env.TOKEN)
