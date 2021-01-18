@@ -2,10 +2,10 @@ FROM node:lts
 
 WORKDIR /root
 
-COPY package*.json .
+COPY package*.json ./
 
 RUN npm install
 
-COPY *.js .
+COPY *.js ./
 
 ENTRYPOINT [ "node", "index.js" ]
